@@ -64,7 +64,7 @@ public class Chkapi {
 	}
 	
 	@GetMapping(path="/asistencia/{fecha}")
-	public HashMap<Object,Object>getAsistencia(@PathVariable String paramfecha){
+	public HashMap<Object,Object>getAsistencia(@PathVariable("fecha") String paramfecha){
 		HashMap<Object,Object>mapa=new HashMap<Object,Object>();
 		this.gen_asist=new GeneradorDeAsistencia();
 		
