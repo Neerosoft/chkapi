@@ -80,7 +80,7 @@ public class Chkapi {
 		return mapa;
 	}
 	
-	@PostMapping
+	@PostMapping("/asistenciaUnitaria")
 	public HashMap<Object,Object> getAsistenciaUnitaria(@RequestBody PAsistUnitaria p) {
 		HashMap<Object,Object>mapa=new HashMap<Object,Object>();
 		mapa.clear();
