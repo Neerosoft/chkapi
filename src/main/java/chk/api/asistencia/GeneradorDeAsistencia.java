@@ -57,5 +57,40 @@ public class GeneradorDeAsistencia {
 		}
 		return link;
 	}
+	
+	public String URIReporteDeAsistenciaUnitaria(String nombre,String fechai,String fechaf) {
+		String link=this.path.get("url");
+		String urx=fechai+"-"+fechaf+".pdf";
+		String file=this.path.get("path")+urx;
+		
+		try {
+			HashMap<String,Object>mapa=new HashMap<String,Object>();
+			mapa.clear();
+			mapa.put("nombre",nombre);
+			mapa.put("fechai",fechai);
+			mapa.put("fechaf",fechaf);
+			
+			Connection con=null;
+			con=this.dblink.getConnection();
+			System.out.println("\nLoad report from: "+this.path.get("reportes")+"asistenciaUnitaria.jasper");
+			this.p=Paths.get(this.path.get("reportes")+"asistencia.jasper");
+			URI uri=p.toUri();
+			URL url=uri.toURL();
+			JasperReport report=(JasperReport)JRLoader.loadObject(url);
+			JasperPrint print=JasperFillManager.fillReport(report,mapa,con);
+			System.out.println("\nLocation saved file: "+file);
+			JasperExportManager.exportReportToPdfFile(print,file);			
+			link=link+urx;
+			this.dblink.CloseConnection(con);
+			System.out.println("\nurx :"+link);
+			
+		} 
+		catch (Exception e) {
+			System.out.println("Error al generar el pdf de asistenciaUnitaria "+e);
+			e.printStackTrace();
+			link=this.path.get("urlprueba");
+		}
+		return link;
+	}
 
 }
