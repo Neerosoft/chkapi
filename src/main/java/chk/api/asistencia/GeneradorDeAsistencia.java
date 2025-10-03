@@ -72,8 +72,8 @@ public class GeneradorDeAsistencia {
 			
 			Connection con=null;
 			con=this.dblink.getConnection();
-			System.out.println("\nLoad report from: "+this.path.get("reportes")+"asistenciaUnitaria.jasper");
-			this.p=Paths.get(this.path.get("reportes")+"asistenciaUnitaria.jasper");
+			System.out.println("\nLoad report from: "+this.path.get("reportes")+"asistUnitaria.jasper");
+			this.p=Paths.get(this.path.get("reportes")+"asistUnitaria.jasper");
 			URI uri=p.toUri();
 			URL url=uri.toURL();
 			JasperReport report=(JasperReport)JRLoader.loadObject(url);
