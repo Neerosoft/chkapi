@@ -60,7 +60,7 @@ public class GeneradorDeAsistencia {
 	
 	public String URIReporteDeAsistenciaUnitaria(String nombre,String fechai,String anio,String txtmes) {
 		String link=this.path.get("url");
-		String urx=fechai+"-"+anio+".pdf";
+		String urx=nombre+ "-"+txtmes+"-"+anio+".pdf";
 		String file=this.path.get("path")+urx;
 		
 		try {
@@ -70,6 +70,12 @@ public class GeneradorDeAsistencia {
 			mapa.put("fechai",fechai);
 			mapa.put("anio",anio);
 			mapa.put("txtmes", txtmes);
+			
+			System.out.println("\nParametros recibidos;");
+			System.out.println("\n\nnombre:  "+mapa.get("nombre"));
+			System.out.println("    fechai:  "+mapa.get("fechai"));
+			System.out.println("      anio:  "+mapa.get("anio"));
+			System.out.println("       mes:  "+mapa.get("txtmes")+"\n\n");
 			
 			Connection con=null;
 			con=this.dblink.getConnection();
