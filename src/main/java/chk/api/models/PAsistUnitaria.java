@@ -4,7 +4,7 @@ public class PAsistUnitaria {
 	
 	private String nombre;
 	private String fechai;
-	private String fechaf;
+	private String anio;
 	private String reporte;
 	
 	public PAsistUnitaria() {
@@ -22,12 +22,14 @@ public class PAsistUnitaria {
 	}
 	public void setFechai(String fechai) {
 		this.fechai = fechai;
+	}	
+
+	public String getAnio() {
+		return anio;
 	}
-	public String getFechaf() {
-		return fechaf;
-	}
-	public void setFechaf(String fechaf) {
-		this.fechaf = fechaf;
+
+	public void setAnio(String anio) {
+		this.anio = anio;
 	}
 
 	public String getReporte() {
