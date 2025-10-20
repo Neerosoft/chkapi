@@ -85,7 +85,7 @@ public class Chkapi {
 		HashMap<Object,Object>mapa=new HashMap<Object,Object>();
 		mapa.clear();
 		this.gen_asist=new GeneradorDeAsistencia();
-		mapa.put("url",this.gen_asist.URIReporteDeAsistenciaUnitaria(p.getNombre(),p.getFechai(),p.getAnio()));
+		mapa.put("url",this.gen_asist.URIReporteDeAsistenciaUnitaria(p.getNombre(),p.getFechai(),p.getAnio(),p.getTxtmes()));
 		
 		return mapa;
 	}

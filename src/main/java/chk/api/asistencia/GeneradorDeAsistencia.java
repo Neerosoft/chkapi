@@ -58,9 +58,9 @@ public class GeneradorDeAsistencia {
 		return link;
 	}
 	
-	public String URIReporteDeAsistenciaUnitaria(String nombre,String fechai,String fechaf) {
+	public String URIReporteDeAsistenciaUnitaria(String nombre,String fechai,String anio,String txtmes) {
 		String link=this.path.get("url");
-		String urx=fechai+"-"+fechaf+".pdf";
+		String urx=fechai+"-"+anio+".pdf";
 		String file=this.path.get("path")+urx;
 		
 		try {
@@ -68,7 +68,8 @@ public class GeneradorDeAsistencia {
 			mapa.clear();
 			mapa.put("nombre",nombre);
 			mapa.put("fechai",fechai);
-			mapa.put("fechaf",fechaf);
+			mapa.put("anio",anio);
+			mapa.put("txtmes", txtmes);
 			
 			Connection con=null;
 			con=this.dblink.getConnection();

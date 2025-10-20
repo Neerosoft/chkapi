@@ -6,6 +6,7 @@ public class PAsistUnitaria {
 	private String fechai;
 	private String anio;
 	private String reporte;
+	private String txtmes;
 	
 	public PAsistUnitaria() {
 		
@@ -39,6 +40,16 @@ public class PAsistUnitaria {
 	public void setReporte(String reporte) {
 		this.reporte = reporte;
 	}
+
+	public String getTxtmes() {
+		return txtmes;
+	}
+
+	public void setTxtmes(String txtmes) {
+		this.txtmes = txtmes;
+	}
+	
+	
 	
 	
 	
